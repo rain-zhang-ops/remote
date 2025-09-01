@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package control;
+
+option go_package = "example.com/remote/proto;controlpb";
+
+service DeviceRegistry {
+  rpc RegisterDevice(EnrollReq) returns (EnrollResp);
+}
+
+message EnrollReq {
+  string token = 1;
+}
+
+message EnrollResp {
+  string device_id = 1;
+}
